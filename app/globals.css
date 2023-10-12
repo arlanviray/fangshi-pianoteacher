@@ -1,27 +1,22 @@
+:root {
+    --color-primary: #85200c;
+    --color-secondary: #ea9999;
+    --bg-white: #fffffe;
+    --bg-light: #f9f2f2;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* library */
+@import url("../node_modules/hamburgers/dist/hamburgers.min.css");
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply text-base bg-bgWhite;
+}
+
+main {
+    min-height: calc(100vh - 44px);
+    padding-top: 70px;
 }
