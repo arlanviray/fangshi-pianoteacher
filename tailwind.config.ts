@@ -10,8 +10,10 @@ const config: Config = {
     colors: {
       primary: 'var(--color-primary)',
       secondary: 'var(--color-secondary)',
-      bgWhite: 'var(--bg-white)',
-      bgLight: 'var(--bg-light)',
+      tertiary: 'var(--color-tertiary)',
+      white: 'var(--color-white)',
+      black: 'var(--color-black)',
+      light: 'var(--color-light)',
     },
     extend: {
       backgroundImage: {
@@ -19,6 +21,12 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      spacing: {
+        '18': '72px',
+      },
+      zIndex: {
+        '1': '1',
+      }
     },
   },
   plugins: [],

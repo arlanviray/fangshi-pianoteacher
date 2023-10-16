@@ -1,22 +1,68 @@
 :root {
     --color-primary: #85200c;
     --color-secondary: #ea9999;
-    --bg-white: #fffffe;
-    --bg-light: #f9f2f2;
+    --color-tertiary: #f4cccc;
+    --color-white: #fffffe;
+    --color-black: #000001;
+    --color-light: #f9f2f2;
 }
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* library */
 @import url("../node_modules/hamburgers/dist/hamburgers.min.css");
+.hamburger {
+    @apply h-6 p-0;
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before, 
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before {
+    @apply bg-primary;
+}
+
+/* default */
+html.no-scroll {
+    @apply overflow-hidden h-0;
+}
 
 body {
-    @apply text-base bg-bgWhite;
+    @apply bg-white text-base;
+}
+
+body, a {
+    @apply text-black;
 }
 
 main {
+    @apply bg-white pt-18;
     min-height: calc(100vh - 44px);
-    padding-top: 70px;
+}
+main, footer {
+    @apply relative z-10;
+}
+
+header, main, footer {
+    transition: transform .25s ease-in-out;
+}
+.nav-mobile-show header, .nav-mobile-show main, .nav-mobile-show footer {
+    transform: translateX(-208px)
+}
+
+.nav-mobile {
+    box-shadow: inset 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+}
+.nav-mobile a {
+    @apply block border-2 text-white px-3 py-2 mb-2;
+    border-color: transparent;
+}
+.nav-mobile a.nav-active {
+    @apply border-white bg-secondary text-black;
+}
+
+.nav-desktop a {
+    @apply inline-block border-2 rounded-xl px-3 py-1 mr-1;
+    border-color: transparent;
+}
+.nav-desktop a.nav-active {
+    @apply border-secondary bg-tertiary;
 }
