@@ -38,7 +38,7 @@ export default function Home() {
     {
       name: "Stefy",
       image: "testimonial1.jpg", 
-      testimonial: "Two of my three children were fortunate enough to have Mrs Lifang Viray as their fourth grade teacher. Her knowledge and teaching style was beyond what we had expected. She is able to create an environment where students enjoy learning without even knowing they're learning. Erin incorporates humor and fun in her daily teaching routine, and is very knowledgable in all subjects. Because of her, my children were well prepared for middle school and excel in all subjects. I truly believe that Erin is dedicated to her job and the success of children. She will remain one of my kids' favorite teachers of all time!",
+      testimonial: "Two of my three children were fortunate enough to have Mrs Lifang Viray as their fourth grade teacher. Her knowledge and teaching style was beyond what we had expected. She is able to create an environment where students enjoy learning without even knowing they're learning. Lifang incorporates humor and fun in her daily teaching routine, and is very knowledgable in all subjects. Because of her, my children were well prepared for middle school and excel in all subjects. I truly believe that Erin is dedicated to her job and the success of children. She will remain one of my kids' favorite teachers of all time!",
     },
     {
       name: "Li Juan",
@@ -56,10 +56,14 @@ export default function Home() {
     <>
       <section className="relative">
         <img src="/fangshi_hero.jpg" alt="FangShi hero" className="object-cover object-left-top w-full md:h-[600px]" />
-        <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-0 lg:w-6/12 md:w-7/12 text-center px-5 py-8">
-          <p className="text-lg font-semibold mb-2">THINK TOMORROW, ACT NOW</p>
-          <h1 className={pacifico.className +" text-primary drop-shadow text-4xl xs:text-5xl sm:text-6xl lg:text-7xl"}>Online Chinese<br />Teacher</h1>
-          <p className="inline-block bg-secondary text-lg text-white px-2 py-1 mt-4">FREE 30 minutes trial</p>
+        <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-0 md:w-8/12 lg:w-7/12 px-5 py-8 sm:text-right">
+          <div className="sm:inline-block md:pr-5 lg:pr-10 text-center">
+            <p className="text-lg font-semibold mb-2">THINK TOMORROW, ACT NOW</p>
+            <h1 className={pacifico.className +" text-primary drop-shadow text-4xl sm:text-6xl lg:text-7xl"}>
+              <span className="block whitespace-nowrap">Online Mandarin</span>Teacher
+            </h1>
+            <p className="inline-block bg-secondary text-lg text-white px-2 py-1 mt-4">FREE 30 minutes trial</p>
+          </div>
         </div>
       </section>
 
