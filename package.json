@@ -13,7 +13,8 @@
     "lodash": "^4.17.21",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.199",
@@ -24,6 +25,7 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
+    "scss": "^0.2.4",
     "tailwindcss": "latest",
     "typescript": "latest"
   }
