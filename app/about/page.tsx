@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'FangShi | About Me',
-  description: '',
+  title: "FangShi | About me",
+  description: "",
 }
 
 export default function About() {

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Stefy",
+    "image": "testimonial1.jpg", 
+    "testimonial": "Two of my three children were fortunate enough to have Mrs Lifang Viray as their fourth grade teacher. Her knowledge and teaching style was beyond what we had expected. She is able to create an environment where students enjoy learning without even knowing they're learning. Lifang incorporates humor and fun in her daily teaching routine, and is very knowledgable in all subjects. Because of her, my children were well prepared for middle school and excel in all subjects. I truly believe that Lifang is dedicated to her job and the success of children. She will remain one of my kids' favorite teachers of all time!"
+  },
+  {
+    "name": "Li Juan",
+    "image": "testimonial2.jpg", 
+    "testimonial": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non tristique dolor. Quisque at lacus eu arcu maximus mattis. Integer in quam sollicitudin ante condimentum lacinia vel sit amet nulla. Maecenas facilisis luctus est. Phasellus varius nunc ut nisl tempor, a vestibulum magna posuere. Aliquam lectus augue, dignissim ut arcu in, condimentum dapibus enim. Cras fermentum massa sed tortor eleifend, vitae varius arcu tristique. Sed eu nunc commodo, tincidunt diam in, ultrices erat. Nullam elementum odio in placerat aliquam. Etiam fermentum orci ligula, id consectetur odio tincidunt sit amet."
+  },
+  {
+    "name": "Ja Ming Yu",
+    "image": "testimonial3.jpg", 
+    "testimonial": "In ornare, velit eu eleifend porttitor, sem diam sollicitudin nibh, vehicula fringilla nibh nulla quis risus. Vivamus pellentesque lectus enim, rutrum dapibus quam consectetur in. Duis ultricies egestas finibus. Pellentesque ac libero ut dolor sagittis tempus. Mauris vestibulum purus lectus, id lobortis velit condimentum eu. Quisque consectetur luctus pellentesque. Suspendisse eget blandit odio, non tempor ante. Nullam eget lacus varius, laoreet nisi eget, rhoncus eros. Vivamus aliquet pharetra massa. Cras eu venenatis lacus. Suspendisse consectetur nec nulla ac malesuada. Morbi tristique lobortis fermentum. Suspendisse hendrerit vitae leo id iaculis. Duis dictum fringilla ex quis malesuada. Integer turpis quam, rhoncus nec pellentesque vitae, pulvinar ac lacus."
+  }
+]

@@ -3,8 +3,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// library
-import _ from "lodash"
 // components
 import NavLinks from "../components/NavLinks";
 
@@ -20,7 +18,7 @@ export default function Header() {
   ]
 
   const handleHamburgerMenu = () => {
-    if (_.isEmpty(hamburgerMenu)) {
+    if (hamburgerMenu.trim().length === 0) {
       sethamburgerMenu("is-active");
       queryHTML?.classList.add("no-scroll")
       queryBody?.classList.add("nav-mobile-show")
