@@ -15,8 +15,8 @@ export default function Home() {
     <>
       <section className="relative">
         <img src="/fangshi_hero.jpg" alt="FangShi hero" className="object-cover object-left-top w-full md:h-[600px]" />
-        <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-0 md:w-8/12 lg:w-7/12 px-5 py-8 sm:text-right">
-          <div className="sm:inline-block md:pr-5 lg:pr-10 text-center">
+        <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-0 lg:w-7/12 px-5 py-8">
+          <div className="sm:inline-block text-center">
             <p className="text-lg font-semibold mb-2">THINK TOMORROW, ACT NOW</p>
             <h1 className={pacifico.className +" text-primary drop-shadow text-4xl xs:text-[2.7em] xs:leading-[1.1] sm:text-6xl lg:text-7xl"}>
               <span className="block whitespace-nowrap">Online Mandarin</span>Teacher
