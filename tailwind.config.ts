@@ -14,6 +14,7 @@ const config: Config = {
       white: 'var(--color-white)',
       black: 'var(--color-black)',
       light: 'var(--color-light)',
+      error: 'var(--color-error)',
     },
     extend: {
       backgroundImage: {

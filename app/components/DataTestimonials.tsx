@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react"
 // libraries
@@ -31,9 +33,11 @@ export default function DataTestimonials({ fontPacifico }) {
         {data.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className="md:flex md:gap-8">
-                <div className="md:w-2/12 max-md:flex max-md:justify-center mb-4"><img src={"/"+ item.image} alt="" className="rounded-full max-md:w-32" /></div>
-                <div className="md:w-10/12 w-full">
+              <div className="grid gap-4 md:gap-8 md:grid-cols-12">
+                <div className="md:col-span-2 max-md:flex max-md:justify-center">
+                  <img src={"/"+ item.image} alt="" className="rounded-full max-md:w-32" />
+                </div>
+                <div className="md:col-span-10">
                   <p>{item.testimonial}</p>
                   <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
                 </div>

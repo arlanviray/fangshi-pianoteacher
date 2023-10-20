@@ -5,6 +5,7 @@
     --color-white: #fffffe;
     --color-black: #000001;
     --color-light: #f9f2f2;
+    --color-error: #ef3b3a;
 }
 
 /* variables */
@@ -45,6 +46,10 @@ body {
     @apply bg-white text-base;
     &, a {
         @apply text-black;
+    }
+
+    a {
+        @apply underline;
     }
 }
 
@@ -87,7 +92,7 @@ header, main, footer {
     width: $NavMobileWidth;
     box-shadow: inset 8px 0 10px -8px rgba(0, 0, 0, 0.5);
     a {
-        @apply block border-2 border-transparent text-white px-3 py-2 mb-2;
+        @apply block no-underline border-2 border-transparent text-white px-3 py-2 mb-2;
         &.nav-active {
             @apply border-white bg-secondary text-black;
         }
@@ -95,9 +100,25 @@ header, main, footer {
 }
 .nav-desktop {
     a {
-        @apply inline-block border-2 border-transparent rounded-xl px-3 py-1 mr-1;
+        @apply inline-block no-underline border-2 border-transparent rounded-xl px-3 py-1 mr-1;
         &.nav-active {
             @apply border-secondary bg-tertiary;
         }
+    }
+}
+
+.contactform {
+    input, textarea {
+        vertical-align: top; // removed bottom extra spacing
+        @apply w-full border-2 border-secondary rounded-md bg-white p-2 mb-1;
+    }
+
+    textarea {
+        resize: none;
+        @apply h-52;
+    }
+
+    .errfield {
+        @apply text-xs text-error font-normal pl-2;
     }
 }

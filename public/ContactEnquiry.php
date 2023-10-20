@@ -12,12 +12,12 @@
 
     if (empty($name) && empty($email) && empty($message)) die();
 
-    if ($_POST && ($_SERVER["SERVER_NAME"] === "www.creativewiz.net" || $_SERVER["SERVER_NAME"] === "localhost")) {
+    if ($_POST) {
         // set response code - 200 OK
         http_response_code(200);
 
-        $to = "arlan.viray@creativewiz.net, hang.dam@creativewiz.net"; //
-        $subject = "Creativewiz: Contact Enquiry";
+        $to = "arlan.viray@creativewiz.net";
+        $subject = "FangShi: Contact Enquiry";
         $from = $email;
 
         // data
@@ -26,22 +26,14 @@
         $msg.= "Email: ". $email ."\r\n";
         $msg.= "Message:\r\n". $message ."\r\n";
 
-        // headers
-        // $headers = "";
-        // $headers.= "MIME-Version: 1.0" . "\r\n";
-        // $headers.= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
-        // $headers.= "From: <". $from .">";
-
         // send email
         mail($to, $subject, $msg, "From: ". $from);
-
-        echo json_encode([
-            "sent" => true, 
-            "message" => "Thank you for contacting Creativewiz!<br>We'll get back to you shortly."
-        ]);
+        
+        // success message
+        echo json_encode(["sent" => true, "message" => "Thank you [". $name ."] for contacting me!<br>I'll get back to you very soon."]);
     }
     else {
-        // tell the user about error
+        // error message
         echo json_encode(["sent" => false, "message" => "Something went wrong!<br>Please try again later."]);
     }
 
