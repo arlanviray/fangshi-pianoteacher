@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next"
 import PageTitle from "../components/PageTitle"

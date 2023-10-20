@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next"
 import PageTitle from "../components/PageTitle"
 import ContactForm from "../components/ContactForm"
