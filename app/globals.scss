@@ -1,7 +1,8 @@
 :root {
     --color-primary: #85200c;
     --color-secondary: #ea9999;
-    --color-tertiary: #f4cccc;
+    --color-tertiary: #c4978e;
+    --color-quaternary: #f4cccc;
     --color-white: #fffffe;
     --color-black: #000001;
     --color-light: #f9f2f2;
@@ -94,7 +95,7 @@ header, main, footer {
     a {
         @apply block no-underline border-2 border-transparent text-white px-3 py-2 mb-2;
         &.nav-active {
-            @apply border-white bg-secondary text-black;
+            @apply border-secondary bg-secondary text-black;
         }
     }
 }
@@ -102,7 +103,7 @@ header, main, footer {
     a {
         @apply inline-block no-underline border-2 border-transparent rounded-xl px-3 py-1 mr-1;
         &.nav-active {
-            @apply border-secondary bg-tertiary;
+            @apply border-secondary bg-secondary text-white;
         }
     }
 }

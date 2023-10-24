@@ -17,7 +17,7 @@ export default function Home() {
         <img src="/fangshi_hero.jpg" alt="FangShi hero" className="object-cover object-left-top w-full md:h-[600px]" />
         <div className="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-0 lg:w-7/12 px-5 py-8">
           <div className="sm:inline-block text-center">
-            <p className="text-lg font-bold mb-2 uppercase">Empower Your Fluency</p>
+            <p className="text-lg font-bold uppercase mb-2 sm:inline-block sm:backdrop-blur-sm sm:px-2 sm:py-1">Empower Your Fluency</p>
             <h1 className={pacifico.className +" text-primary drop-shadow text-4xl xs:text-[2.7em] xs:leading-[1.1] sm:text-6xl lg:text-7xl"}>
               <span className="block whitespace-nowrap">Online Mandarin</span>Teacher
             </h1>
@@ -31,7 +31,7 @@ export default function Home() {
         <div className="content">
           <div className="text-center mb-8">
             <h2>THE APPROACH</h2>
-            <p>SPECIALLY DESIGNED FOR YOUR CHILD</p>
+            <p>SPECIALLY DESIGNED FOR YOU</p>
           </div>
           <DataApproach />
         </div>

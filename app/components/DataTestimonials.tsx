@@ -31,19 +31,25 @@ export default function DataTestimonials({ fontPacifico }) {
         autoHeight={true}
       >
         {data.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <div className="grid gap-4 md:gap-8 md:grid-cols-12">
-                <div className="md:col-span-2 max-md:flex max-md:justify-center">
-                  <img src={"/"+ item.image} alt="" className="rounded-full max-md:w-32" />
-                </div>
-                <div className="md:col-span-10">
+          if (item.include) {
+            return (
+              <SwiperSlide key={index}>
+                {/* <div className="grid gap-4 md:gap-8 md:grid-cols-12">
+                  <div className="md:col-span-2 max-md:flex max-md:justify-center">
+                    <img src={"/"+ item.image} alt="" className="rounded-full max-md:w-32" />
+                  </div>
+                  <div className="md:col-span-10">
+                    <p>&quot;{item.testimonial}&quot;</p>
+                    <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
+                  </div>
+                </div> */}
+                <div className="max-w-3xl mx-auto">
                   <p>&quot;{item.testimonial}&quot;</p>
                   <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
                 </div>
-              </div>
-            </SwiperSlide>
-          )
+              </SwiperSlide>
+            )
+          }
         })}
       </Swiper>
     </>
