@@ -38,7 +38,7 @@ export default function DataTestimonials({ fontPacifico }) {
                   <img src={"/"+ item.image} alt="" className="rounded-full max-md:w-32" />
                 </div>
                 <div className="md:col-span-10">
-                  <p>{item.testimonial}</p>
+                  <p>&quot;{item.testimonial}&quot;</p>
                   <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
                 </div>
               </div>

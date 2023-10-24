@@ -20,7 +20,7 @@ export default function DataApproach() {
         {data.map((item, index) => {
           return (
             <div key={index} className="bg-white p-4">
-              <p className="font-semibold uppercase mb-2">{item.title}</p>
+              <p className="text-primary font-semibold uppercase mb-2">{item.title}</p>
               <p>{item.copy}</p>
             </div>
           )
