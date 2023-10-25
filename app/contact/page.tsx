@@ -4,8 +4,8 @@ import PageTitle from "../components/PageTitle"
 import ContactForm from "../components/ContactForm"
 
 export const metadata: Metadata = {
-  title: "FangShi | Contact",
-  description: "",
+  title: "FangShi | Contact | Online Mandarin",
+  description: "Reach out to me at Online Mandarin Teacher for expert guidance and personalized assistance in your Mandarin language learning journey. Contact me now to embark on your path to learning Mandarin.",
 }
 
 export default function Contact() {

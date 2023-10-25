@@ -5,8 +5,8 @@ import PageTitle from "../components/PageTitle"
 import DataAbout from "../components/DataAbout"
 
 export const metadata: Metadata = {
-  title: "FangShi | About me",
-  description: "",
+  title: "FangShi | About me | Online Mandarin",
+  description: "Embark on an immersive journey of Mandarin learning, blending linguistic expertise with cultural enrichment. Discover a supportive environment tailored for your language exploration.",
 }
 
 export default function About() {
