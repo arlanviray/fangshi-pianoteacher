@@ -16,11 +16,13 @@ export default function DataApproach() {
 
   return (
     <>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((item, index) => {
           return (
             <div key={index} className="bg-white p-4">
-              <p className="text-primary font-semibold uppercase mb-2">{item.title}</p>
+              <p className="mb-2 font-semibold uppercase text-primary">
+                {item.title}
+              </p>
               <p>{item.copy}</p>
             </div>
           )

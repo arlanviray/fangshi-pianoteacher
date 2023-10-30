@@ -18,7 +18,7 @@ export default function ContactForm() {
     const submittedData = {
       name: formData.get("name"),
       email: formData.get("email"),
-      message: formData.get("message")
+      message: formData.get("message"),
     }
 
     if (submittedData.name.toString().trim().length === 0) {
@@ -27,14 +27,14 @@ export default function ContactForm() {
     } else {
       setErrName("")
     }
-    
+
     if (submittedData.email.toString().trim().length === 0) {
       setErrEmail("Email field is required.")
       return false
     } else {
       setErrEmail("")
     }
-    
+
     if (submittedData.message.toString().trim().length === 0) {
       setErrMessage("Message field is required.")
       return false
@@ -45,12 +45,14 @@ export default function ContactForm() {
     setSubmitting(true)
 
     try {
-      const postUrl = location.hostname === "localhost" ? "https://lifang.creativewiz.net/ContactEnquiry.php" : "/ContactEnquiry.php"
+      const postUrl =
+        location.hostname === "localhost"
+          ? "https://lifang.creativewiz.net/ContactEnquiry.php"
+          : "/ContactEnquiry.php"
       const response = await axios.post(postUrl, submittedData)
       setSuccess(response.data.message)
       // return response.data
-
-    } catch(error) {
+    } catch (error) {
       console.warn(error)
     }
   }
@@ -66,22 +68,39 @@ export default function ContactForm() {
                 <p className="errfield">{errName}</p>
               </div>
               <div className="pb-3">
-                <input type="email" name="email" id="email" placeholder="EMAIL" />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="EMAIL"
+                />
                 <p className="errfield">{errEmail}</p>
               </div>
               <div className="pb-3">
-                <textarea name="message" id="message" placeholder="MESSAGE"></textarea>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="MESSAGE"
+                ></textarea>
                 <p className="errfield">{errMessage}</p>
               </div>
               <div className="text-right">
-                <button type="submit" className="text-xl font-bold border-2 border-secondary bg-tertiary rounded-xl px-4 py-2">
+                <button
+                  type="submit"
+                  className="rounded-xl border-2 border-secondary bg-tertiary px-4 py-2 text-xl font-bold"
+                >
                   {submitting ? "Submitting..." : "SUBMIT"}
                 </button>
               </div>
             </form>
           )
         } else {
-          return <p className="text-xl font-semibold text-secondary text-center" dangerouslySetInnerHTML={{ __html: success }}></p>
+          return (
+            <p
+              className="text-center text-xl font-semibold text-secondary"
+              dangerouslySetInnerHTML={{ __html: success }}
+            ></p>
+          )
         }
       })()}
     </>

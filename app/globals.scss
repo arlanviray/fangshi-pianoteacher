@@ -1,12 +1,12 @@
 :root {
-    --color-primary: #85200c;
-    --color-secondary: #ea9999;
-    --color-tertiary: #c4978e;
-    --color-quaternary: #f4cccc;
-    --color-white: #fffffe;
-    --color-black: #000001;
-    --color-light: #f9f2f2;
-    --color-error: #ef3b3a;
+  --color-primary: #85200c;
+  --color-secondary: #ea9999;
+  --color-tertiary: #c4978e;
+  --color-quaternary: #f4cccc;
+  --color-white: #fffffe;
+  --color-black: #000001;
+  --color-light: #f9f2f2;
+  --color-error: #ef3b3a;
 }
 
 /* variables */
@@ -20,106 +20,117 @@ $NavMobileWidth: 200px;
 /* libraries */
 @import url("../node_modules/hamburgers/dist/hamburgers.min.css");
 .hamburger {
-    @apply h-6 p-0;
-    &.is-active .hamburger-inner, .hamburger-inner {
-        &, &::after, &::before {
-            @apply bg-primary;
-        }
+  @apply h-6 p-0;
+  &.is-active .hamburger-inner,
+  .hamburger-inner {
+    &,
+    &::after,
+    &::before {
+      @apply bg-primary;
     }
+  }
 }
 
 .swiper-slide {
-    @apply pb-10;
+  @apply pb-10;
 }
 .swiper-pagination {
-    bottom: 0 !important;
-    .swiper-pagination-bullet-active {
-        @apply bg-primary;
-    }
+  bottom: 0 !important;
+  .swiper-pagination-bullet-active {
+    @apply bg-primary;
+  }
 }
 
 /* default */
 html.no-scroll {
-    @apply overflow-hidden h-0;
+  @apply h-0 overflow-hidden;
 }
 
 body {
-    @apply bg-white text-base;
-    &, a {
-        @apply text-black;
-    }
+  @apply bg-white text-base;
+  &,
+  a {
+    @apply text-black;
+  }
 
-    a {
-        @apply underline;
-    }
+  a {
+    @apply underline;
+  }
 }
 
 h1 {
-    font-family: "Pacifico", cursive;
+  font-family: "Pacifico", cursive;
 }
-h2, .h2 {
-    @apply text-2xl font-semibold tracking-wider;
+h2,
+.h2 {
+  @apply text-2xl font-semibold tracking-wider;
 }
 
 main {
-    @apply bg-white pt-18;
-    min-height: calc(100vh - 44px);
+  @apply bg-white pt-18;
+  min-height: calc(100vh - 44px);
 }
-main, footer {
-    @apply relative z-10;
+main,
+footer {
+  @apply relative z-10;
 }
 
-header, main, footer {
-    transition: transform .25s ease-in-out;
+header,
+main,
+footer {
+  transition: transform 0.25s ease-in-out;
 }
 
 .content {
-    @apply max-w-5xl px-5 py-16 mx-auto;
+  @apply mx-auto max-w-5xl px-5 py-16;
 }
 
 .nav-mobile-show {
-    header, main, footer {
-        transform: translateX(-#{$NavMobileWidth});
-    }
-    main::after {
-        content: "";
-        @apply z-1 absolute top-0 left-0 w-full h-full bg-white opacity-75;
-    }
-    .nav-mobile {
-        @apply block;
-    }
+  header,
+  main,
+  footer {
+    transform: translateX(-#{$NavMobileWidth});
+  }
+  main::after {
+    content: "";
+    @apply absolute left-0 top-0 z-1 h-full w-full bg-white opacity-75;
+  }
+  .nav-mobile {
+    @apply block;
+  }
 }
 .nav-mobile {
-    width: $NavMobileWidth;
-    box-shadow: inset 8px 0 10px -8px rgba(0, 0, 0, 0.5);
-    a {
-        @apply block no-underline border-2 border-transparent text-white px-3 py-2 mb-2;
-        &.nav-active {
-            @apply border-secondary bg-secondary text-black;
-        }
+  width: $NavMobileWidth;
+  box-shadow: inset 8px 0 10px -8px rgba(0, 0, 0, 0.5);
+  a {
+    @apply mb-2 block border-2 border-transparent px-3 py-2 text-white no-underline;
+    &.nav-active {
+      @apply border-secondary bg-secondary text-black;
     }
+  }
 }
 .nav-desktop {
-    a {
-        @apply inline-block no-underline border-2 border-transparent rounded-xl px-3 py-1 mr-1;
-        &.nav-active {
-            @apply border-secondary bg-secondary text-white;
-        }
+  a {
+    @apply mr-1 inline-block rounded-xl border-2 border-transparent px-3 py-1 no-underline;
+    &.nav-active {
+      @apply border-secondary bg-secondary text-white;
     }
+  }
 }
 
 .contactform {
-    input, textarea {
-        vertical-align: top; // removed bottom extra spacing
-        @apply w-full border-2 border-secondary rounded-md bg-white p-2 mb-1;
-    }
+  input,
+  textarea {
+    vertical-align: top; // removed bottom extra spacing
+    @apply mb-1 w-full rounded-md border-2 border-secondary bg-white p-2;
+  }
 
-    textarea {
-        resize: none;
-        @apply h-52;
-    }
+  textarea {
+    resize: none;
+    @apply h-52;
+  }
 
-    .errfield {
-        @apply text-xs text-error font-normal pl-2;
-    }
+  .errfield {
+    @apply pl-2 text-xs font-normal text-error;
+  }
 }

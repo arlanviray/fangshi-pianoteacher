@@ -43,9 +43,11 @@ export default function DataTestimonials({ fontPacifico }) {
                     <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
                   </div>
                 </div> */}
-                <div className="max-w-3xl mx-auto">
+                <div className="mx-auto max-w-3xl">
                   <p>&quot;{item.testimonial}&quot;</p>
-                  <p className={fontPacifico +" text-primary text-3xl mt-3"}>- {item.name}</p>
+                  <p className={fontPacifico + " mt-3 text-3xl text-primary"}>
+                    - {item.name}
+                  </p>
                 </div>
               </SwiperSlide>
             )

@@ -17,7 +17,11 @@ export default function DataAbout() {
   return (
     <>
       {data.map((item, index) => {
-        return <p key={index} className="mt-4">{item}</p>
+        return (
+          <p key={index} className="mt-4">
+            {item}
+          </p>
+        )
       })}
     </>
   )

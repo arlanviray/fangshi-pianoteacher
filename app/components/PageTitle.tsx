@@ -2,7 +2,7 @@
 import { Pacifico } from "next/font/google"
 const pacifico = Pacifico({
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
 })
 
 export default function PageTitle({ title }) {
@@ -10,7 +10,11 @@ export default function PageTitle({ title }) {
     <>
       <section className="bg-tertiary">
         <div className="content">
-            <h2 className={pacifico.className +" text-6xl text-white text-center"}>{title}</h2>
+          <h2
+            className={pacifico.className + " text-center text-6xl text-white"}
+          >
+            {title}
+          </h2>
         </div>
       </section>
     </>

@@ -6,7 +6,8 @@ import DataAbout from "../components/DataAbout"
 
 export const metadata: Metadata = {
   title: "FangShi | About me | Online Mandarin",
-  description: "Embark on an immersive journey of Mandarin learning, blending linguistic expertise with cultural enrichment. Discover a supportive environment tailored for your language exploration.",
+  description:
+    "Embark on an immersive journey of Mandarin learning, blending linguistic expertise with cultural enrichment. Discover a supportive environment tailored for your language exploration.",
 }
 
 export default function About() {
@@ -17,8 +18,12 @@ export default function About() {
       <section>
         <div className="content max-md:!pt-0">
           <div className="grid gap-8 md:grid-cols-12">
-            <div className="md:col-span-4 max-md:flex max-md:justify-center max-md:-mx-5">
-              <img src="/fangshi_about.jpg" alt="FangShi about" className="w-full" />
+            <div className="max-md:-mx-5 max-md:flex max-md:justify-center md:col-span-4">
+              <img
+                src="/fangshi_about.jpg"
+                alt="FangShi about"
+                className="w-full"
+              />
             </div>
             <div className="md:col-span-8">
               <h3 className="text-4xl font-bold">- Lifang's story:</h3>
