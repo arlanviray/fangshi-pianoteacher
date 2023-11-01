@@ -9,9 +9,9 @@ RewriteBase /
 
 # BEGIN Fonts
 <FilesMatch "\.(ttf|ttc|otf|eot|woff2|woff|font.css)$">
-<IfModule mod_headers.c>
-	Header set Access-Control-Allow-Origin "*"
-</IfModule>
+	<IfModule mod_headers.c>
+		Header set Access-Control-Allow-Origin "*"
+	</IfModule>
 </FilesMatch>
 # END Fonts
 
@@ -25,6 +25,14 @@ RewriteBase /
 # Redirect 404 to to a custom 404 page
 ErrorDocument 404 /404
 
-# Rewrite - remove the .html extension from a html file
+# Rewrite everything to HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Add WWW to any URLs that do not have them
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove the .html extension from a html file
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
