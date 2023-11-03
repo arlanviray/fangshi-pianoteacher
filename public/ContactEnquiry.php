@@ -12,7 +12,7 @@
 
     if (empty($name) && empty($email) && empty($message)) die();
 
-    if ($_POST) {
+    if ($_POST && $_SERVER["SERVER_NAME"] === "www.fangshi.co.uk") {
         // set response code - 200 OK
         http_response_code(200);
 

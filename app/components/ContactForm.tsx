@@ -47,7 +47,7 @@ export default function ContactForm() {
     try {
       const postUrl =
         location.hostname === "localhost"
-          ? "https://lifang.creativewiz.net/ContactEnquiry.php"
+          ? "https://www.fangshi.co.uk/ContactEnquiry.php"
           : "/ContactEnquiry.php"
       const response = await axios.post(postUrl, submittedData)
       setSuccess(response.data.message)
