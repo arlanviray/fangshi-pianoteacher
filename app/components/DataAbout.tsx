@@ -2,9 +2,7 @@
 import { DOMAIN_NAME } from "../helpers/Utils"
 
 async function getData() {
-  const res = await fetch(`${DOMAIN_NAME}/data/about.json`, {
-    cache: "no-cache",
-  })
+  const res = await fetch(`${DOMAIN_NAME}/data/about.json`)
 
   if (!res.ok) {
     throw new Error("Failed to fetch data")
