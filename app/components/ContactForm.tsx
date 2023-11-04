@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 // libraries
 import axios from "axios"
+// helpers
+import { DOMAIN_NAME } from "../helpers/Utils"
 
 export default function ContactForm() {
   const [errName, setErrName] = useState("")
@@ -11,10 +13,10 @@ export default function ContactForm() {
   const [success, setSuccess] = useState("")
   const [submitting, setSubmitting] = useState(false)
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const formData = new FormData(event.target)
+    const formData = new FormData(event.currentTarget)
     const submittedData = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -45,10 +47,7 @@ export default function ContactForm() {
     setSubmitting(true)
 
     try {
-      const postUrl =
-        location.hostname === "localhost"
-          ? "https://www.fangshi.co.uk/ContactEnquiry.php"
-          : "/ContactEnquiry.php"
+      const postUrl = `${DOMAIN_NAME}/ContactEnquiry.php`
       const response = await axios.post(postUrl, submittedData)
       setSuccess(response.data.message)
       // return response.data

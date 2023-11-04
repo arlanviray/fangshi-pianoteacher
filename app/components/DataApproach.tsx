@@ -1,23 +1,25 @@
-"use client"
+// helpers
+import { DOMAIN_NAME } from "../helpers/Utils"
 
-import { useEffect, useState } from "react"
+async function getData() {
+  const res = await fetch(`${DOMAIN_NAME}/data/approach.json`, {
+    cache: "no-cache",
+  })
 
-export default function DataApproach() {
-  const [data, setData] = useState([])
+  if (!res.ok) {
+    throw new Error("Failed to fetch data")
+  }
 
-  useEffect(() => {
-    fetch("/data/approach.json")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        setData(data)
-      })
-  }, [])
+  return res.json()
+}
+
+export default async function DataApproach() {
+  const data = await getData()
 
   return (
     <>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {data.map((item, index) => {
+        {data.map((item: { title: string; copy: string }, index: number) => {
           return (
             <div key={index} className="bg-white p-4">
               <p className="mb-2 font-semibold uppercase text-primary">

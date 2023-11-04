@@ -5,7 +5,6 @@ const pacifico = Pacifico({
   subsets: ["latin"],
   weight: "400",
 })
-
 // components
 import DataApproach from "./components/DataApproach"
 import DataTestimonials from "./components/DataTestimonials"
