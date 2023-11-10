@@ -1,9 +1,8 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import type { Metadata } from "next"
 import PageTitle from "../components/PageTitle"
-import DataAbout from "../components/DataAbout"
+import DataAbout from "./DataAbout"
 
+import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "FangShi | About me | Online Mandarin",
   description:
@@ -26,7 +25,6 @@ export default function About() {
               />
             </div>
             <div className="md:col-span-8">
-              <h3 className="text-4xl font-bold">- Lifang's story:</h3>
               <DataAbout />
             </div>
           </div>

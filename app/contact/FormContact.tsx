@@ -6,7 +6,7 @@ import axios from "axios"
 // helpers
 import { DOMAIN_NAME } from "../helpers/Utils"
 
-export default function ContactForm() {
+export default function FormContact() {
   const [errName, setErrName] = useState("")
   const [errEmail, setErrEmail] = useState("")
   const [errMessage, setErrMessage] = useState("")
@@ -86,7 +86,7 @@ export default function ContactForm() {
               <div className="text-right">
                 <button
                   type="submit"
-                  className="rounded-xl border-2 border-secondary bg-tertiary px-4 py-2 text-xl font-bold"
+                  className="rounded-xl border-2 border-secondary bg-tertiary px-4 py-2 text-xl font-bold text-white"
                 >
                   {submitting ? "Submitting..." : "SUBMIT"}
                 </button>

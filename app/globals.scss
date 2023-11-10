@@ -118,6 +118,32 @@ footer {
   }
 }
 
+.multiparagraphs {
+  p {
+    @apply mb-4;
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+}
+
+.quoteparagraph {
+  p {
+    &::before,
+    &::after {
+      content: '"';
+      @apply font-bold text-secondary;
+    }
+
+    &::before {
+      @apply mr-1;
+    }
+    &::after {
+      @apply ml-1;
+    }
+  }
+}
+
 .contactform {
   input,
   textarea {

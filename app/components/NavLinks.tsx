@@ -6,18 +6,16 @@ export default function NavLinks({ navLinks, navEvent }) {
 
   return (
     <>
-      {navLinks.map((link) => {
-        return (
-          <Link
-            href={link.path}
-            key={link.title}
-            className={pathname === link.path ? "nav-active" : ""}
-            onClick={navEvent ? navEvent : ""}
-          >
-            {link.title}
-          </Link>
-        )
-      })}
+      {navLinks.map((link: any) => (
+        <Link
+          href={link.path}
+          key={link.title}
+          className={pathname === link.path ? "nav-active" : ""}
+          onClick={navEvent ? navEvent : ""}
+        >
+          {link.title}
+        </Link>
+      ))}
     </>
   )
 }

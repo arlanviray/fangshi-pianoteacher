@@ -5,9 +5,30 @@ const pacifico = Pacifico({
   subsets: ["latin"],
   weight: "400",
 })
+
 // components
-import DataApproach from "./components/DataApproach"
-import DataTestimonials from "./components/DataTestimonials"
+import DataApproach from "./home/DataApproach"
+import DataTestimonials from "./home/DataTestimonials"
+
+// contentful
+// import { client } from "./helpers/Client"
+// const getDataApproach = async () => {
+//   const response = await client.getEntries({
+//     content_type: "homeTheApproach",
+//     order: ["sys.createdAt"],
+//   })
+
+//   return response.items
+// }
+
+// const getDataTestimonials = async () => {
+//   const response = await client.getEntries({
+//     content_type: "homeTestimonials",
+//     order: ["sys.createdAt"],
+//   })
+
+//   return response.items
+// }
 
 export default function Home() {
   return (
