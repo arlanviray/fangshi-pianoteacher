@@ -1,8 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { fetchData } from "./helpers/FetchData"
-import DataApproach from "./home/DataApproach"
-import DataTestimonials from "./home/DataTestimonials"
-
 // fonts
 import { Pacifico } from "next/font/google"
 const pacifico = Pacifico({
@@ -10,13 +6,31 @@ const pacifico = Pacifico({
   weight: "400",
 })
 
-const queryApproach = "content_type=homeTheApproach&order=sys.createdAt"
-const queryTestimonials = "content_type=homeTestimonials&order=sys.createdAt"
+// components
+import DataApproach from "./home/DataApproach"
+import DataTestimonials from "./home/DataTestimonials"
 
-export default async function Home() {
-  const dataApproach = await fetchData(queryApproach)
-  const dataTestimonials = await fetchData(queryTestimonials)
+// contentful
+// import { client } from "./helpers/Client"
+// const getDataApproach = async () => {
+//   const response = await client.getEntries({
+//     content_type: "homeTheApproach",
+//     order: ["sys.createdAt"],
+//   })
 
+//   return response.items
+// }
+
+// const getDataTestimonials = async () => {
+//   const response = await client.getEntries({
+//     content_type: "homeTestimonials",
+//     order: ["sys.createdAt"],
+//   })
+
+//   return response.items
+// }
+
+export default function Home() {
   return (
     <>
       <section className="relative">
@@ -56,7 +70,7 @@ export default async function Home() {
             <h2>THE APPROACH</h2>
             <p>SPECIALLY DESIGNED FOR YOU</p>
           </div>
-          <DataApproach initialData={dataApproach} queryParam={queryApproach} />
+          <DataApproach />
         </div>
       </section>
 
@@ -66,11 +80,7 @@ export default async function Home() {
             <h2>TESTIMONIALS</h2>
           </div>
           <div className="relative">
-            <DataTestimonials
-              initialData={dataTestimonials}
-              queryParam={queryTestimonials}
-              fontPacifico={pacifico.className}
-            />
+            <DataTestimonials fontPacifico={pacifico.className} />
           </div>
         </div>
       </section>

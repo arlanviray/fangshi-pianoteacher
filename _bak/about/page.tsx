@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { fetchData } from "../helpers/FetchData"
 import PageTitle from "../components/PageTitle"
 import DataAbout from "./DataAbout"
 
@@ -10,11 +9,7 @@ export const metadata: Metadata = {
     "Embark on an immersive journey of Mandarin learning, blending linguistic expertise with cultural enrichment. Discover a supportive environment tailored for your language exploration.",
 }
 
-const queryParam = "content_type=about&sys.id=5gqeuG7ZitiSN7RjWIWrQW"
-
-export default async function About() {
-  const data = await fetchData(queryParam)
-
+export default function About() {
   return (
     <>
       <PageTitle title="About me" />
@@ -30,7 +25,7 @@ export default async function About() {
               />
             </div>
             <div className="md:col-span-8">
-              <DataAbout initialData={data} queryParam={queryParam} />
+              <DataAbout />
             </div>
           </div>
         </div>
