@@ -1,40 +1,65 @@
 <?php
 
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: POST");
-    header("Access-Control-Allow-Headers: Content-Type");
+    // Import PHPMailer classes
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\SMTP;
+
+    require "vendor/phpmailer/src/PHPMailer.php";
+    require "vendor/phpmailer/src/Exception.php";
+    require "vendor/phpmailer/src/SMTP.php";
+    require "vendor/Autoloader.php";
+
     $rest_json = file_get_contents("php://input");
-    $_POST = json_decode($rest_json, true);
-    
-    $name    = $_POST["name"];
-	$email   = $_POST["email"];
-	$message = $_POST["message"];
+    $_POST     = json_decode($rest_json, true);
+    $name      = $_POST["name"];
+	$email     = $_POST["email"];
+	$message   = $_POST["message"];
+    $debug     = false;
 
     if (empty($name) && empty($email) && empty($message)) die();
 
-    if ($_POST && $_SERVER["SERVER_NAME"] === "www.fangshi.co.uk") {
-        // set response code - 200 OK
-        http_response_code(200);
+    try {
+        // Create instance of PHPMailer class
+        $mail = new PHPMailer($debug);
+        if ($debug) {
+            // issue a detailed log
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+        }
 
-        $to = "arlan.viray@creativewiz.net";
-        $subject = "FangShi: Contact Enquiry";
-        $from = $email;
-
-        // data
-        $msg = "";
-        $msg.= "Name: ". $name ."\r\n";
-        $msg.= "Email: ". $email ."\r\n";
-        $msg.= "Message:\r\n". $message ."\r\n";
-
-        // send email
-        mail($to, $subject, $msg, "From: ". $from);
+        // Authentication with SMTP
+        $mail-> isSMTP();
+        $mail->SMTPAuth = true;
         
-        // success message
-        echo json_encode(["sent" => true, "message" => "Thank you [". $name ."] for contacting me!<br>I'll get back to you very soon."]);
-    }
-    else {
-        // error message
-        echo json_encode(["sent" => false, "message" => "Something went wrong!<br>Please try again later."]);
+        // Login
+        $mail->Host = "smtp.ionos.co.uk";
+        $mail->Port = 587;
+        $mail->Username = "contact@creativewiz.uk";
+        $mail->Password = "Cw1z-avionosemail!";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->setFrom("contact@creativewiz.uk", "FangShi");
+        $mail->addAddress("arlan.viray@gmail.com", "Arlan Viray");
+        $mail->addAddress("lifangviray@gmail.com", "Lifang Viray");
+        // $mail->addReplyTo("contact@creativewiz.uk", "FangShi Information");
+        $mail->CharSet = "UTF-8";
+        $mail->Encoding = "base64";
+        $mail->isHTML(true);
+        $mail->Subject = "Contact Enquiry";
+        $mail->Body = "<b>Name:</b> ". $name ."<br><b>Email:</b> ". $email ."<br><b>Message:</b><br>". nl2br($message);
+        // $mail->AltBody = "The text as a simple text element";
+        $mail->send();
+        
+        echo json_encode([
+            "sent" => true, 
+            "message" => "Thank you [". $name ."] for contacting me!<br>I'll get back to you very soon."
+        ]);
+
+    } catch (Exception $e) {
+        // echo "Message could not be sent. Mailer Error: ".$e->getMessage();
+        echo json_encode([
+            "sent" => false, 
+            "message" => "Something went wrong!<br>Please try again later."
+        ]);
     }
 
-?>
+?> 

@@ -1,1 +1,2 @@
-export const DOMAIN_NAME = "https://www.fangshi.co.uk"
+export const DOMAIN_NAME =
+  typeof window !== "undefined" ? window.location.origin : ""
