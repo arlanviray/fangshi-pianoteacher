@@ -4,9 +4,13 @@ import { fetchDataSWR } from "../helpers/FetchDataSWR"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 export default function DataAbout({ queryParam, initialData }) {
-  const data = fetchDataSWR(queryParam, initialData)
+  // const data = fetchDataSWR(queryParam, initialData)
+  // const dataItem = data.data.items[0].fields
 
-  const dataItem = data.data.items[0].fields
+  const { data, error, isLoading } = fetchDataSWR(queryParam)
+  if (!data) return
+
+  const dataItem = data.items[0].fields
 
   return (
     <>

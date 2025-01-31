@@ -12,7 +12,13 @@ export default function DataTestimonials({
   initialData,
   fontPacifico,
 }) {
-  const data = fetchDataSWR(queryParam, initialData)
+  // const data = fetchDataSWR(queryParam, initialData)
+  // const dataItems = data.data.items
+
+  const { data, error, isLoading } = fetchDataSWR(queryParam)
+  if (!data) return
+
+  const dataItems = data.items
 
   return (
     <>
@@ -24,7 +30,7 @@ export default function DataTestimonials({
         pagination={{ clickable: true }}
         autoHeight={true}
       >
-        {data.data.items.map((item: any) => (
+        {dataItems.map((item: any) => (
           <SwiperSlide key={item.sys.id}>
             <div className="mx-auto max-w-3xl">
               <div className="quoteparagraph">

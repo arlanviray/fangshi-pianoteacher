@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { fetchData } from "./helpers/FetchData"
 import DataApproach from "./home/DataApproach"
+import DataHeadings from "./home/DataHeadings"
 import DataTestimonials from "./home/DataTestimonials"
 
 // fonts
@@ -10,6 +11,7 @@ const pacifico = Pacifico({
   weight: "400",
 })
 
+const queryHeadings = "content_type=homeHeadings&order=sys.createdAt"
 const queryApproach = "content_type=homeTheApproach&order=sys.createdAt"
 const queryTestimonials = "content_type=homeTestimonials&order=sys.createdAt"
 
@@ -25,29 +27,10 @@ export default async function Home() {
           alt="FangShi hero"
           className="w-full object-cover object-left-top md:h-[600px]"
         />
-        <div className="px-5 py-8 sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 lg:w-7/12">
-          <div className="text-center sm:inline-block">
-            <p className="mb-2 text-lg font-bold uppercase sm:inline-block sm:px-2 sm:py-1 sm:backdrop-blur-sm">
-              Empower Your Fluency
-            </p>
-            <h1
-              className={
-                pacifico.className +
-                " text-4xl text-primary drop-shadow xs:text-[2.7em] xs:leading-[1.1] sm:text-6xl lg:text-7xl"
-              }
-            >
-              <span className="block whitespace-nowrap">Online Mandarin</span>
-              Teacher
-            </h1>
-            <p className="mt-4 text-lg sm:mx-auto sm:max-w-xl sm:drop-shadow">
-              Unveil the beauty of Mandarin with personalized online lessons,
-              transforming language learning into a cultural odyssey.
-            </p>
-            <p className="mt-4 inline-block bg-secondary px-2 py-1 text-lg text-white">
-              FREE 30 minutes trial
-            </p>
-          </div>
-        </div>
+        <DataHeadings
+          queryParam={queryHeadings}
+          fontPacifico={pacifico.className}
+        />
       </section>
 
       <section className="bg-tertiary">
