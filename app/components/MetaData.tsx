@@ -3,7 +3,7 @@ export default function MetaData({ title, description }) {
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="autho" content="Arlan Viray, arlan.viray@gmail.com" />
+      <meta name="author" content="Arlan Viray, arlan.viray@gmail.com" />
     </>
   )
 }
