@@ -7,11 +7,17 @@ import { Pagination } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 
+type Props = {
+  queryParam: string
+  initialData?: any
+  fontPacifico: any
+}
+
 export default function DataTestimonials({
   queryParam,
   initialData,
   fontPacifico,
-}) {
+}: Props) {
   // const data = fetchDataSWR(queryParam, initialData)
   // const dataItems = data.data.items
 

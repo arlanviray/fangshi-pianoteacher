@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { fetchData } from "./helpers/FetchData"
-import DataApproach from "./home/DataApproach"
+import MetaData from "./components/MetaData"
 import DataHeadings from "./home/DataHeadings"
+import SectionName from "./home/SectionName"
+import DataApproaches from "./home/DataApproaches"
 import DataTestimonials from "./home/DataTestimonials"
+import { fetchData } from "./helpers/FetchData"
 
 // fonts
 import { Pacifico } from "next/font/google"
@@ -12,21 +14,17 @@ const pacifico = Pacifico({
 })
 
 const queryHeadings = "content_type=homeHeadings&order=sys.createdAt"
-const queryApproach = "content_type=homeTheApproach&order=sys.createdAt"
+const queryApproach = "content_type=homeApproaches&order=sys.createdAt"
 const queryTestimonials = "content_type=homeTestimonials&order=sys.createdAt"
 
 export default async function Home() {
-  const dataApproach = await fetchData(queryApproach)
-  const dataTestimonials = await fetchData(queryTestimonials)
+  // const dataHeadings = await fetchData(queryHeadings)
+  // const dataApproach = await fetchData(queryApproach)
+  // const dataTestimonials = await fetchData(queryTestimonials)
 
   return (
     <>
       <section className="relative">
-        <img
-          src="/fangshi_hero.jpg"
-          alt="FangShi hero"
-          className="w-full object-cover object-left-top md:h-[600px]"
-        />
         <DataHeadings
           queryParam={queryHeadings}
           fontPacifico={pacifico.className}
@@ -35,22 +33,24 @@ export default async function Home() {
 
       <section className="bg-tertiary">
         <div className="content">
-          <div className="mb-8 text-center">
-            <h2>THE APPROACH</h2>
-            <p>SPECIALLY DESIGNED FOR YOU</p>
-          </div>
-          <DataApproach initialData={dataApproach} queryParam={queryApproach} />
+          <SectionName entryId={"5LUAXQQR9WAeEU3WfMpkws"} />
+
+          {/* <DataApproaches initialData={dataApproach} queryParam={queryApproach} /> */}
+          <DataApproaches queryParam={queryApproach} />
         </div>
       </section>
 
       <section>
         <div className="content">
-          <div className="mb-8 text-center">
-            <h2>TESTIMONIALS</h2>
-          </div>
+          <SectionName entryId={"6L0S4XKfbEHnVZa3IHEHkK"} />
+
           <div className="relative">
-            <DataTestimonials
+            {/* <DataTestimonials
               initialData={dataTestimonials}
+              queryParam={queryTestimonials}
+              fontPacifico={pacifico.className}
+            /> */}
+            <DataTestimonials
               queryParam={queryTestimonials}
               fontPacifico={pacifico.className}
             />

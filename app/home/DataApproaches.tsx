@@ -2,7 +2,12 @@
 
 import { fetchDataSWR } from "../helpers/FetchDataSWR"
 
-export default function DataApproach({ queryParam, initialData }) {
+type Props = {
+  queryParam: string
+  initialData?: any
+}
+
+export default function DataApproaches({ queryParam, initialData }: Props) {
   // const data = fetchDataSWR(queryParam, initialData)
   // const dataItems = data.data.items
 
